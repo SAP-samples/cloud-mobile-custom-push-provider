@@ -22,8 +22,11 @@
 
 The AppID and AppKey are the client's identity, used when the client SDK initializes; the
 AppSecret is authenticated for sending message at server side. (Extracted from Mi Doc.)
+
   <img src="XiaoMiPushPictures/1.png" width=600 title="Android App1" div align=center border=5>
+
   <img src="XiaoMiPushPictures/2.png" width=600 title="Android App2" div align=center border=5>
+
   <img src="XiaoMiPushPictures/3.png" width=600 title="Android App3" div align=center border=5>
 
    - 1.1.2 Enable to use Mi Push
@@ -98,8 +101,11 @@ Make sure to add "/push" at the end of the url for proxy endpoint
    In android app, click on button "注册到CF" to onboard on the CF app.
 
    <img src="XiaoMiPushPictures/a1.png" width=600 title="Server side a1" div align=center border=5>
+
    It will invoke the logon window. Fill in with correct user name and password.
+
    <img src="XiaoMiPushPictures/a2.png" width=600 title="Server side a1" div align=center border=5>
+
    Then the app will switch back to main window.
    Click on button "注册device" to register the device to the CF app.
 
