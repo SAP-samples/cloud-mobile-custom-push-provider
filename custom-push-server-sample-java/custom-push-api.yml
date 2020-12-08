@@ -1,0 +1,127 @@
+swagger: '2.0'
+info:
+  title: Custom Push Rest Notification API
+  description: This API is used between the Mobile Service and custom push server, the Mobile Service will send push notifications to the custom push server for distribution, the custom push server must implement this API for Mobile Service to access 
+  version: 1.0.0
+host: <custom.push.server.host>
+schemes:
+- https
+basePath: /
+consumes:
+- application/json
+produces:
+- application/json
+
+paths:
+  /<push>:
+    post:
+      summary: Push alert message to custom push server, the custom push server will process this request and push message to device
+      parameters:
+      - name: Notification
+        in: body
+        description: Notification body.
+        required: true
+        schema:
+          $ref: '#/definitions/PushNotification'
+      responses:
+        200:
+          description: Push message accepted.
+          schema:
+            $ref: '#/definitions/PushResponseSuccess'
+        400:
+          description: Bad request. See response for details.
+          schema:
+            $ref: '#/definitions/PushResponseError'
+        401:
+          description: Invalid user token
+          schema:
+            $ref: '#/definitions/PushResponseError'
+        500:
+          description: System internal error. See response for details.
+          schema:
+            $ref: '#/definitions/PushResponseError'
+
+definitions:
+  PushNotification:
+    type: object
+    properties:
+      push_token:
+        type: string
+        maxLength: 2048
+        description: deivce token using for push
+      device:
+        type: string
+        maxLength: 256
+        description: registered device name
+      device_model:
+        type: string
+        maxLength: 64
+        description: device model
+        enum:
+        - "android"
+        - "ios"
+        - "iphone"
+        - "ipad"
+        - "windows8"
+        - "windows81"
+        - "winphone81"
+      username:
+        type: string
+        maxLength: 128
+        description: username
+      push_group:
+        type: string
+        maxLength: 128
+        description: push group
+      notification_id:
+        type: string
+        maxLength: 64
+        description: notification id
+      payload:
+        $ref: '#/definitions/Payload'
+
+  Payload:
+    type: object
+    description: backend push message payload
+    properties:
+      alert:
+        type: string
+        maxLength: 2048
+        description: alert message
+      badge:
+        type: integer
+        format: int32
+      data:
+        type: string
+        maxLength: 2048
+      sound:
+        type: string
+        maxLength: 256
+        description: If this field is supplied, a FCM Notification message is sent (in case of an Android device).
+      priority:
+        description: Either normal or high. APNs maps normal to 5 and high to 10. Default for APNs is 10.
+        type: string
+        maxLength: 128
+      sendAsSms:
+        type: boolean
+      custom:
+        $ref: '#/definitions/CustomParameters'
+
+  CustomParameters:
+    type: object
+    description: key/value parameters used for custom push server
+    additionalProperties:
+      type: string
+
+  PushResponseSuccess:
+    type: object
+    properties:
+      message_id:
+        type: string
+
+  PushResponseError:
+    type: object
+    properties:
+      error_message:
+        type: string
+

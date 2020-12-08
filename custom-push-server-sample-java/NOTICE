@@ -1,0 +1,11 @@
+Custom Push Server Sample
+
+Copyright 2020 SAP SE or an SAP affiliate company. All rights reserved.
+
+This software bundles the following NOTICE files from third party library providers:
+
+SpringBoot, Version 2.3.4.RELEASE (https://github.com/spring-projects/spring-boot) under Apache V2.0 (http://www.apache.org/licenses/) and dependencies
+
+HMS Pushkit Java Severdemo, Version 1.0 (https://github.com/HMS-Core/hms-push-serverdemo-java) under Apache V2.0 (http://www.apache.org/licenses/) and dependencies
+
+MiPush_SDK_Server_Http2, v1.0.9
