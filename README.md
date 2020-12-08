@@ -1,9 +1,9 @@
 [![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/cloud-platform-mobile-custom-push-provider/)](https://api.reuse.software/info/github.com/SAP-samples/cloud-platform-mobile-custom-push-provider/)
 # Sample of Custom Push Provider
-This repository will hold source code for custom push provider apps and test code. We tested custom push for Huawei devices and Xiaomi devices.
+This repository will hold source code for Custom Push Provider apps and test code. We tested Custom Push for Huawei devices and Xiaomi devices.
 
 #### [Custom Push Server Sample](./custom-push-server-sample-java)
-custom-push-server-sample-java is a java springboot project which can perform as an endpoint in SAP Mobile Service Connectivity. It will work with SAP Mobile Service Push. Real customer should build its own custom push server function here. Once provided Huawei developer account or Xiaomi account information, this project can be a standalone server or deployed to cloud foundry. 
+custom-push-server-sample-java is a Java Springboot project which can perform as an endpoint in SAP Mobile Service Connectivity. It will work with SAP Mobile Service Push Notification. The customer should build its own Custom Push server function here. Once provided Huawei developer account or Xiaomi account information, this project can be a standalone server or deployed to Cloud Foundry. 
 
 #### [Xiaomi device test](./xiaomi-push-clientdemo-android)
 Xiaomi android studio device project
