@@ -1,4 +1,4 @@
-[![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/cloud-platform-mobile-custom-push-provider/)](https://api.reuse.software/info/github.com/SAP-samples/cloud-platform-mobile-custom-push-provider/)
+[![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/cloud-platform-mobile-custom-push-provider)](https://api.reuse.software/info/github.com/SAP-samples/cloud-platform-mobile-custom-push-provider)
 # Sample of Custom Push Provider
 This repository will hold source code for Custom Push Provider apps and test code. We tested Custom Push for Huawei devices and Xiaomi devices.
 
